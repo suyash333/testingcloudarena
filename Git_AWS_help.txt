@@ -1,0 +1,33 @@
+to make git file available in AMI
+1) >>sudo yum install -y git
+2) >> mkdir mygit
+3) >> git pull https://github.com/suyash333/testingcloudarena.git
+
+-----------------------------------------
+
+now run docker build on AMI using above git code.
+1) make folder /home/ec2-user/docker-git
+2) create a docker file in same folder 
+
+FROM ubuntu
+# Clone our private GitHub Repository
+RUN  apt-get update
+RUN  apt-get upgrade
+RUN  apt-get install -y git
+RUN mkdir mygitdocker
+RUN pwd
+RUN cd /mygitdocker && git init && git pull https://github.com/suyash333/testingcloudarena.git
+RUN cat /mygitdocker/HelloGit.txt
+# This will copy your content in docker contianer and in given folder
+
+3)Now run build by using following command.
+>>docker build -t dockergit/ex1:v1 .
+
+4) check if it created or not.
+>> docker images 
+
+5) To run and check into container use following command
+>>docker run -i -t <Image Id> /bin/bash
+
+
+
