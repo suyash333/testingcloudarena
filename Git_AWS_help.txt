@@ -31,5 +31,13 @@ RUN cd /mygitdocker && javac Main.java && java Main
 5) To run and check into container use following command
 >>docker run -i -t <Image Id> /bin/bash
 
+6) In order to run any command on container, first check image id and then 
+
+>> docker images
+>>  docker run -i <image id>  <command to execute in container>
+ eg:  docker run -i 67f39036855f cat /mygitdocker/HelloGit.txt
+
+
+
 
 
