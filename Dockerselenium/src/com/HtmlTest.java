@@ -1,5 +1,8 @@
 package com;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -17,7 +20,8 @@ class HtmlTest {
 				//HtmlUnitDriver unitDriver = new HtmlUnitDriver();
 				HtmlUnitDriver unitDriver = new HtmlUnitDriver(true);
 				//HtmlUnitDriver unitDriver = new HtmlUnitDriver(BrowserVersion.FIREFOX_3);
-		 
+				Logger logger = Logger.getLogger("");
+				logger.setLevel(Level.OFF);
 				// open google.com webpage
 				unitDriver.get("http://google.com");
 		 
